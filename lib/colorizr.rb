@@ -1,43 +1,53 @@
 require 'colorizr'
 
 class String
+  attr_accessor :string
+
+  @@colors = String.methods
+
   def red
-    #Your code goes here
+    @string = "\e[31m#{@string}\e[0m"
   end
 
   def green
-    #Your code goes here
+    @string = "\e[32m#{@string}\e[0m"
   end
 
   def yellow
-    #Your code goes here
+    @string = "\e[33m#{@string}\e[0m"
   end
 
   def blue
-    #Your code goes here
+    @string = "\e[34m#{@string}\e[0m"
   end
 
   def pink
-    #Your code goes here
+    @string = "\e[35m#{@string}\e[0m"
   end
 
   def light_blue
-    #Your code goes here
+    @string = "\e[94m#{@string}\e[0m"
   end
 
   def white
-    #Your code goes here
+    @string = "\e[97m#{@string}\e[0m"
   end
 
   def light_grey
-    #Your code goes here
+    @string = "\e[37m#{@string}\e[0m"
   end
 
   def black
-    #Your code goes here
+    @string = "\e[30m#{@string}\e[0m"
   end
-  
+
   def self.create_colors
     #code to generate all color methods goes here
   end
+
+  def self.colors
+    @@colors
+  end
 end
+
+puts String.colors
