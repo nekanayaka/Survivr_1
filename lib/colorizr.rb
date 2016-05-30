@@ -7,8 +7,7 @@ class String
   def self.create_colors
     for color, value in @@colors
       self.send(:define_method, color) do
-        # puts value
-        "\e[#{value}m" + self + "\e[0m"
+        "\e[#{value}m#{self}\e[0m"
       end
     end
   end
@@ -20,9 +19,11 @@ class String
   end
 
   def self.colors
+    colors = []
     for color in @@colors
-      puts color
+      colors.push(color)
     end
+    colors
   end
 end
 
