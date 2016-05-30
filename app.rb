@@ -1,5 +1,5 @@
 require 'colorizr'
 
-"Nimna".red
-# puts String.colors
-# puts String.sample_colors
+puts "Nimna".blue
+puts String.colors
+puts String.sample_colors
